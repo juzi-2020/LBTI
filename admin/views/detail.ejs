@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LBTI 管理后台 - 结果详情 #<%= row.id %></title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="logo">LBTI</div>
+    <a href="/admin">📊 仪表盘</a>
+    <a href="/admin/results">📋 结果列表</a>
+    <div class="spacer"></div>
+    <a href="https://github.com/juzi-2020/LBTI" target="_blank" class="ext">GitHub ↗</a>
+  </nav>
+  <main class="main">
+    <a href="/admin/results" class="back">← 返回列表</a>
+    <h1>结果详情 #<%= row.id %></h1>
+    <div class="detail-grid">
+      <div class="d-card"><div class="dl">类型</div><div class="dv"><%= row.type %> <%= row.type_name %></div></div>
+      <div class="d-card"><div class="dl">类别</div><div class="dv"><%= row.type_category || '-' %></div></div>
+      <div class="d-card"><div class="dl">废物等级</div><div class="dv"><%= wasteName %></div></div>
+      <div class="d-card"><div class="dl">内心戏</div><div class="dv"><%= row.inner_drama %>%</div></div>
+      <div class="d-card"><div class="dl">冷淡值</div><div class="dv"><%= row.coldness %>%</div></div>
+      <div class="d-card"><div class="dl">极端度</div><div class="dv"><%= row.extreme %>%</div></div>
+      <div class="d-card"><div class="dl">矛盾度</div><div class="dv"><%= row.conflict %>%</div></div>
+      <div class="d-card"><div class="dl">IP</div><div class="dv dim"><%= row.ip || '-' %></div></div>
+      <div class="d-card"><div class="dl">时间</div><div class="dv"><%= row.created_at %></div></div>
+      <div class="d-card full"><div class="dl">User-Agent</div><div class="dv dim" style="font-size:12px"><%= row.user_agent || '-' %></div></div>
+    </div>
+
+    <% if(row.answers && row.answers.length){ %>
+      <h2>答题记录</h2>
+      <table>
+        <thead><tr><th>题号</th><th>选项</th></tr></thead>
+        <tbody>
+          <% row.answers.forEach(function(a,i){ %>
+            <tr><td>Q<%= String(i+1).padStart(2,'0') %></td><td><%= ['A','B','C','D'][a] || '-' %></td></tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </main>
+</div>
+</body>
+</html>

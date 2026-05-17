@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>恋爱人形测试</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--glass:rgba(255,255,255,.45);--glass-border:rgba(255,255,255,.5);--text:#2a2040;--text-dim:#8a7ea8;--accent:#7c5cfc}
+  body{font-family:'Inter',sans-serif;min-height:100vh;background:#d8c8f0;background:radial-gradient(ellipse at 8% 12%,rgba(180,100,255,.7) 0%,transparent 38%),radial-gradient(ellipse at 88% 8%,rgba(100,150,255,.6) 0%,transparent 32%),radial-gradient(ellipse at 45% 92%,rgba(255,130,200,.55) 0%,transparent 38%),radial-gradient(ellipse at 20% 55%,rgba(120,220,180,.5) 0%,transparent 28%),radial-gradient(ellipse at 78% 35%,rgba(255,180,100,.45) 0%,transparent 26%),radial-gradient(ellipse at 35% 25%,rgba(160,120,255,.4) 0%,transparent 32%),radial-gradient(ellipse at 65% 65%,rgba(140,230,140,.4) 0%,transparent 28%),radial-gradient(ellipse at 92% 55%,rgba(255,130,180,.35) 0%,transparent 26%),#d8c8f0;background-size:300% 300%;animation:bgMove 22s ease infinite;color:var(--text);overflow-x:hidden}
+  @keyframes bgMove{0%{background-position:0% 0%}25%{background-position:50% 30%}50%{background-position:100% 50%}75%{background-position:60% 90%}100%{background-position:0% 0%}}
+  .container{max-width:500px;margin:0 auto;padding:30px 20px 50px}
+  header{text-align:center;padding:36px 0 16px}
+  header .badge{display:inline-block;font-size:10px;letter-spacing:2px;color:var(--accent);border:1px solid rgba(124,92,252,.3);border-radius:100px;padding:4px 14px;margin-bottom:14px}
+  header h1{font-size:30px;font-weight:700;background:linear-gradient(135deg,#2d2040,#7c5cfc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  header h1 .line{display:block}
+  header p{color:var(--text-dim);font-size:14px;line-height:1.6}
+  .progress{position:sticky;top:0;z-index:10;padding:14px 16px;margin-bottom:20px;border-radius:14px;background:rgba(255,255,255,.38);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.5);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset}
+  .pb{height:4px;background:rgba(255,255,255,.5);border-radius:4px;overflow:hidden}
+  .pf{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#9b7cfc);border-radius:4px;transition:width .4s}
+  .pt{display:flex;justify-content:space-between;font-size:12px;color:var(--text-dim);margin-top:6px}
+  .q-wrap{min-height:300px;position:relative}
+  .q-card{padding:28px 24px;border-radius:20px;background:rgba(255,255,255,.38);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.5);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 8px 32px rgba(80,60,180,.12);animation:fi .3s ease}
+  @keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes selIn{0%{transform:translateY(3px);box-shadow:inset 0 10px 30px rgba(0,0,0,.2)}60%{transform:translateY(-0.5px);box-shadow:inset 0 4px 12px rgba(0,0,0,.08)}100%{transform:translateY(1px);box-shadow:inset 0 6px 20px rgba(0,0,0,.14),inset 0 0 0 1px rgba(255,255,255,.04)}}
+
+
+  .q-num{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:1px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .q-num .qi{font-size:10px;color:var(--text-dim)}
+  .q-t{font-size:17px;font-weight:600;line-height:1.6;margin-bottom:18px;color:var(--text)}
+  .opt{display:flex;align-items:center;width:100%;padding:14px 16px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.4);border:1.5px solid rgba(255,255,255,.4);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;color:var(--text);font-size:14px;cursor:pointer;transition:all .12s ease;font-family:inherit;text-align:left;line-height:1.5}
+  .opt:hover{background:rgba(255,255,255,.7);border-color:rgba(255,255,255,.7);transform:translateY(-3px);box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 14px 48px rgba(124,92,252,.22)}
+  .opt:active{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.15);transform:translateY(3px);box-shadow:inset 0 10px 30px rgba(0,0,0,.2),inset 0 0 0 1px rgba(255,255,255,.03);transition:all .06s ease}
+
+  .opt.sel{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.25);box-shadow:inset 0 6px 20px rgba(0,0,0,.14),inset 0 0 0 1px rgba(255,255,255,.04);transform:translateY(1px);animation:selIn .35s ease}
+  .ol{flex-shrink:0;width:28px;height:28px;line-height:28px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;margin-right:10px}
+  .ol.a{background:#e84a5f15;color:#e84a5f}
+  .ol.b{background:#f5a62315;color:#f5a623}
+  .ol.c{background:#5b8def15;color:#5b8def}
+  .ol.d{background:#7a7ad015;color:#7a7ad0}
+  .ol.e{background:#6b8e7015;color:#6b8e70}
+  .nav-wrap{display:flex;gap:10px;justify-content:center;margin-top:24px}
+  #prev,#next{padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:4px;height:44px;transition:all .15s ease;flex:1;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  #prev{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);box-shadow:0 0 0 1px rgba(255,255,255,.08) inset;color:var(--text-dim);opacity:0.3;pointer-events:none}
+  #prev.ok{opacity:1;pointer-events:auto;color:var(--text)}
+  #prev.ok:hover{background:rgba(255,255,255,.7);color:var(--accent);transform:translateY(-3px);box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 12px 40px rgba(124,92,252,.22)}
+  #prev.ok:active{background:rgba(255,255,255,.15);transform:translateY(1px);box-shadow:inset 0 6px 20px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.03);transition:all .06s ease}
+  #next{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);box-shadow:0 0 0 1px rgba(255,255,255,.08) inset;color:var(--text);opacity:.4;pointer-events:none}
+  #next.ok{opacity:1;pointer-events:auto}
+  #next.ok:hover{background:rgba(255,255,255,.7);transform:translateY(-3px);box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 12px 40px rgba(124,92,252,.22)}
+  #next.ok:active{background:rgba(255,255,255,.15);transform:translateY(1px);box-shadow:inset 0 6px 20px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.03);transition:all .06s ease}
+  .fn{text-align:center;font-size:12px;color:rgba(80,60,120,.5);margin-top:24px;letter-spacing:1px}
+  @media(max-width:480px){header h1{font-size:26px}.q-t{font-size:16px}.q-card{padding:22px 18px}}
+  @media(prefers-color-scheme:dark){body{background:#181420;background:radial-gradient(ellipse at 10% 15%,rgba(160,100,240,.55) 0%,transparent 38%),radial-gradient(ellipse at 85% 10%,rgba(100,150,240,.5) 0%,transparent 32%),radial-gradient(ellipse at 50% 90%,rgba(220,100,160,.4) 0%,transparent 38%),radial-gradient(ellipse at 25% 60%,rgba(80,180,140,.35) 0%,transparent 28%),radial-gradient(ellipse at 75% 40%,rgba(200,110,140,.3) 0%,transparent 26%),radial-gradient(ellipse at 40% 30%,rgba(140,100,210,.3) 0%,transparent 32%),radial-gradient(ellipse at 60% 70%,rgba(70,170,100,.28) 0%,transparent 28%),radial-gradient(ellipse at 90% 60%,rgba(160,90,120,.25) 0%,transparent 26%),#181420;background-size:300% 300%;animation:bgMove 28s ease infinite}:root{--text:#e4dcf8;--text-dim:#a098c8}.q-card,.progress,.rc{background:rgba(255,255,255,.08)!important}.opt{background:rgba(255,255,255,.08)!important}.opt:hover{background:rgba(255,255,255,.12)!important}.opt:active{box-shadow:inset 0 8px 24px rgba(0,0,0,.5)!important}.opt.sel{background:rgba(255,255,255,.12)!important;box-shadow:inset 0 6px 20px rgba(0,0,0,.4)!important}}
+
+</style>
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="badge">LBTI · 恋爱人形测试</div>
+    <h1><span class="line">你谈恋爱的时候</span><span class="line">到底是个什么物种?</span></h1>
+    <p>15 道题 · 看看你是个什么东西</p>
+  </header>
+  <div class="progress">
+    <div class="pb"><div class="pf" id="pf"></div></div>
+    <div class="pt"><span id="pl">0 / 15</span><span id="pp">0%</span></div>
+  </div>
+  <div class="q-wrap" id="qwrap">
+    <div class="q-card" id="qcard"></div>
+  </div>
+  <div class="nav-wrap"><button id="prev">← 上一题</button><button id="next"><span id="ntxt">下一题</span><span id="narrow"> →</span></button></div>
+  <div class="fn">不准就是你对 · 你急了就是你对</div>
+</div>
+<script>
+var labels=['A','B','C','D','E'];
+var labelColors=['a','b','c','d','e'];
+var qs = [
+  {t:'对象回了个"嗯" 你内心上演了什么大戏？',
+   o:['完了这个"嗯"字没有句号没有表情包 一定是厌了烦了不爱了 我把三天前的聊天记录翻出来逐字分析','心里咯噔一下迅速回了个表情包试探 然后每隔两分钟看一次ta有没有回','想那么多干嘛 可能就是打字累了 我也经常只回一个字 没什么大不了的','嗯就是嗯 打字而已哪有那么多戏 滑走','啊？什么嗯 我刚睡醒手机没电了才看到']},
+  {t:'对象跟别人合影发了朋友圈 配文"今天很开心" 你？',
+   o:['放大到像素级分析那人的穿搭表情站位距离 然后截图发闺蜜群开紧急会议讨论此事是否构成出轨','心里不舒服但拼命深呼吸告诉自己 正常的社交正常的社交正常的社交','点个赞划走 谁还没几个朋友 我也有自己的社交圈 没什么好在意的','不就一张照片吗 我又不是没有朋友','我根本不刷朋友圈 别人告诉我我才知道有这回事']},
+  {t:'你们刚吵完架 对象说"我想一个人静静" 你实际做了什么？',
+   o:['嘴上说好的 然后每隔十分钟发一条消息 到凌晨两点忍不住打了八个电话 边哭边问你是不是不爱我了','忍着不找 但每隔三十秒点亮手机看一眼有没有消息 觉也睡不着 像个傻逼','好 那你也冷静一下 各自消化 等双方都好了再聊 没必要逼太紧','行 那我也静静 先打两把游戏分散注意力','好 然后真的一周不说话 且真心觉得这样挺好的']},
+  {t:'对象今天突然对你特别好 又是买奶茶又是接下班 你第一反应是什么？',
+   o:['肯定是出轨了做亏心事了 开始偷偷查手机定位步数消费记录和外卖地址 准备收集证据','很开心但心里发毛 觉得这是最后的晚餐暴风雨前的宁静 忐忑不安','开心就完了 同时记下来 下次我也对ta好点 关系就是互相的','享受啊 管他为什么 先爽了再说','有吗？ta不是一直对我挺好的吗（其实不是）']},
+  {t:'你精心发了一条仅ta可见的朋友圈 ta没点赞 你会？',
+   o:['删掉 再发一条仅ta可见 再删 再发 循环直到ta点赞为止 不点不睡觉','有点emo有点失落 算了以后再也不搞这些了 爱咋咋地','可能没看到吧 等会儿再看看 真的没看到就算了 也不是什么大事','谁天天盯着赞看啊 发完我自己都忘了','我甚至不记得我发过朋友圈这回事']},
+  {t:'深夜刷手机 手滑给ta三年前的自拍点了个赞 你什么反应？',
+   o:['心脏骤停瞳孔地震 秒取消 截图发给所有朋友说我要死了永别了这个世界','飞速取消假装无事发生 手汗已经浸透了手机屏幕 心里祈祷ta在睡觉没看到','取消就行了 谁大半夜不睡觉盯着通知看啊 就算看到了一笑而过','点就点了 又不是什么见不得人的事 大不了说是手滑','我根本不会去翻ta以前的东西 闲得慌']},
+  {t:'恋爱中最让你崩溃的瞬间是什么？',
+   o:['已读不回 我真的会疯 你倒是回啊 已读到底是什么意思你告诉我 我等得心都碎了','敷衍三连 嗯嗯好的笑死哈哈哈哈 看了比吃苍蝇还难受 不如直接不回','其实还好 看场合吧 忙的时候正常 闲的时候敷衍那确实有点烦 但也不至于崩溃','一天发八百条消息 你是我对象还是我甲方 我看都看不过来','太粘人了 求你给我一点个人空间吧求求了']},
+  {t:'你发现对象好像在偷偷看你的手机 你什么反应？',
+   o:['又高兴又紧张 ta在乎我才看说明爱我 但我刚才是不是搜了什么不该搜的东西 心里开始疯狂回忆','假装没发现 但心里在祈祷千万别看到那个对话框 表面稳如老狗内心已经波涛汹涌','无所谓 看了就看了 手机里又没什么见不得人的 正好说明ta在乎这段关系','看呗随便看 我又没有见不得人的东西 身正不怕影子斜','过了两个月才突然反应过来 哦那天原来是在看我手机啊']},
+  {t:'对象突然问起你前任的事 你怎么应对？',
+   o:['嘴上云淡风轻说都过去了 但心里已经把前任从出生到分手所有罪行列了一张清单从头到尾骂了一遍','简单说两句然后赶紧反问你怎么突然问这个你是不是在意你是不是吃醋了','正常回答就行 问什么答什么 没什么好隐瞒的 过去了就是过去了 坦诚比遮掩强','前任？什么前任 不记得了 没这号人 档案已销毁','哪个前任 我谈过恋爱吗 哦那个啊 不太熟 真的不熟']},
+  {t:'凌晨三点你emo了 你会做什么？',
+   o:['打开备忘录写一篇八百字小作文发给ta 主题是没你我怎么活这个夜我熬不下去了 边写边哭','发一条仅ta可见的阴间负能量朋友圈配一张黑白图 等着ta来救赎我','翻翻手机听会儿歌 等这股劲儿过去 明天醒了就好了 深夜做的决定没有几个是靠谱的','自己消化 戴上耳机听会儿歌睡一觉明天就好了','emo是什么意思 是某种食物吗 我只知道我很困要睡觉']},
+  {t:'如果用一句话描述你和对象目前的关系状态 那会是？',
+   o:['我在硬撑 其实我已经感觉到ta淡了但我还像一条狗一样死守着这段关系 我知道没出息但我做不到','还行吧 但总觉得哪里不太对劲 说不上来具体是什么 就是心里不踏实','正常相处中 有好的时候也有不好的时候 哪有天天甜甜的恋爱 能过就行','挺好的啊能有什么问题 我真的很幸福（其实心里压了三件事一直没说出口）','挺好的 ta也觉得挺好的吧 大概 可能 也许']},
+  {t:'对象说"我想自己待一会儿" 你脑子里第一个念头是什么？',
+   o:['完了完了完了绝对是要分手了 开始在备忘录里起草分手挽留小论文 从相识到相爱写了一千字','嘴上说好的好的你休息吧 但心里把最近一周的所有对话每个表情每个标点都复盘了一遍','每个人都有需要独处的时候 我也需要 给他空间就是给关系空间 不是什么大事','行 那我也自己待会儿 去打两把游戏分散一下注意力','哦 好的 然后真的不去打扰ta 三天后反而是ta主动来找我']},
+  {t:'你心里比谁都清楚 自己在恋爱里最大的毛病是什么？',
+   o:['太在乎了 在乎到让人窒息 我自己知道但我真的改不了 我也想洒脱但做不到','太能脑补了 对方一个标点符号我能分析出八百种含义 然后自己把自己吓死','说不上有什么大毛病 就是普通人谈普通恋爱 有点小问题但谁没有呢','太冷淡了 冷得像一具尸体 对方可能根本感觉不到我在谈恋爱','我可能根本就不需要谈恋爱 有没有都一样 我一个人也挺好的']},
+  {t:'对象突然很认真地跟你说"我们不合适" 你的第一反应是？',
+   o:['疯狂追问到底哪里不合适我可以改我真的可以改 你告诉我我改求你了你说啊我改还不行吗','问清楚原因 但绝不纠缠 问完转身就走 回到家门关上的那一刻才开始崩溃大哭','行 听ta说完 如果真的不合适那也没办法 强扭的瓜不甜 至少认真聊过再散','行吧 你说不合适就不合适吧 然后躲被子里哭一晚上 但绝对不会让ta知道','好 收到 了解了 然后这个人好像从来没在我的生命里出现过 微信也懒得删']},
+  {t:'客观地讲 你在恋爱里到底是一个什么样的物种？',
+   o:['缺爱的小孩 表面大大咧咧没心没肺 但内心一碰就碎得稀烂 需要很多很多的爱才能填满','敏感怪物 需要对象每天说一百遍爱我 不然就觉得对方肯定是不爱了要跑了','正常人一个 恋爱脑的时候上头 清醒的时候理性 谈不上特别好但也不至于祸害人间','独立成熟的成年人 但独立到好像根本就不需要恋爱这种麻烦的东西','一个人真的挺好的 谈恋爱只是人生的一个可选DLC 可装可不装不装也行']},
+];
+var ans={};
+var current=0;
+
+function renderQ(index){
+  var q=qs[index];
+  var card=document.getElementById('qcard');
+  if(!q)return;
+  var html='<div class="q-num"><span>Q'+(index+1).toString().padStart(2,'0')+'</span><span class="qi">'+(index+1)+' / '+qs.length+'</span></div><div class="q-t">'+q.t+'</div>';
+  for(var oi=0;oi<q.o.length;oi++){
+    var sel=ans[index]===oi?' sel':'';
+    html+='<button class="opt'+sel+'" data-q="'+index+'" data-o="'+oi+'"><span class="ol '+labelColors[oi]+'">'+labels[oi]+'</span>'+q.o[oi]+'</button>';
+  }
+  card.innerHTML=html;
+  card.style.animation='none';
+  setTimeout(function(){card.style.animation='fi .3s ease'},10);
+  var btns=card.querySelectorAll('.opt');
+  for(var bi=0;bi<btns.length;bi++){
+    btns[bi].addEventListener('click',function(){
+      var qi=parseInt(this.dataset.q),oi=parseInt(this.dataset.o);
+      ans[qi]=oi;
+      var all=this.parentElement.querySelectorAll('.opt');
+      for(var ai=0;ai<all.length;ai++) all[ai].classList.remove('sel');
+      this.classList.add('sel');
+      up();
+    });
+  }
+}
+
+function up(){
+  var d=0;for(var k in ans)d++;
+  var t=qs.length,pct=d/t*100;
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('pl').textContent=d+'/'+t;
+  document.getElementById('pp').textContent=Math.round(pct)+'%';
+  document.getElementById('prev').classList.toggle('ok',current>0);
+  var btn=document.getElementById('next');
+  var sel=ans[current]!==undefined;
+  btn.classList.toggle('ok',sel);
+  if(sel&&current===qs.length-1){
+    document.getElementById('ntxt').textContent='看看我是什么出生';
+    document.getElementById('narrow').textContent='🎯';
+    btn.onclick=submit;
+  }else{
+    document.getElementById('ntxt').textContent='下一题';
+    document.getElementById('narrow').textContent='→';
+    btn.onclick=nextQ;
+  }
+}
+
+function prevQ(){
+  if(current>0){
+    current--;
+    renderQ(current);
+    up();
+  }
+}
+
+function nextQ(){
+  if(ans[current]===undefined)return;
+  if(current<qs.length-1){
+    current++;
+    renderQ(current);
+    up();
+  }
+}
+
+function submit(){
+  var d=0;for(var k in ans)d++;
+  if(d<qs.length)return;
+  var ap=0,rp=0,aCount=0,dCount=0;
+  for(var i=0;i<qs.length;i++){
+    var v=ans[i];
+    if(v===0){ap+=3;aCount++;}
+    else if(v===1)ap+=2;
+    else if(v===2){ap+=1;rp+=1;} // C:温和计入两边
+    else if(v===3)rp+=2;
+    else if(v===4){rp+=3;dCount++;}
+  }
+  var max=45; // 15*3
+  var ip=Math.round(Math.min(100,ap/max*100));
+  var cp=Math.round(Math.min(100,rp/max*100));
+  var ep=Math.round((aCount+dCount)/qs.length*100);
+  var mp=Math.round(Math.min(aCount,dCount)*2/qs.length*100);
+  var hp='';var bx=0,dx=0;
+  for(var j=0;j<qs.length;j++){var v=ans[j];if(v===1)bx++;if(v===3)dx++;}
+  // PURE: 极少极端，大量轻度的B/D
+  if(aCount+dCount<=2&&bx+dx>=9)hp='pure';
+  // RAT: 大量B(讨好型)
+  else if(bx>=7&&dCount<=2&&aCount<=2)hp='rat';
+  // LIMBO: A和E平衡矛盾
+  else if(aCount>=4&&dCount>=4&&mp>=40)hp='limbo';
+  window.location.href='result.html?i='+ip+'&c='+cp+'&e='+ep+'&m='+mp+(hp?'&h='+hp:'')+'&a='+Object.values(ans).join(',');
+}
+
+document.getElementById('prev').addEventListener('click',prevQ);
+renderQ(0);
+up();
+</script>
+</body>
+</html>

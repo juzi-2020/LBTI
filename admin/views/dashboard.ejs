@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LBTI 管理后台 - 仪表盘</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="logo">LBTI</div>
+    <a href="/admin" class="active">📊 仪表盘</a>
+    <a href="/admin/results">📋 结果列表</a>
+    <div class="spacer"></div>
+    <a href="https://github.com/juzi-2020/LBTI" target="_blank" class="ext">GitHub ↗</a>
+  </nav>
+  <main class="main">
+    <h1>仪表盘</h1>
+    <div class="cards">
+      <div class="card"><div class="num"><%= total %></div><div class="label">总测试数</div></div>
+      <div class="card"><div class="num"><%= today %></div><div class="label">今日新增</div></div>
+      <div class="card"><div class="num"><%= avgDrama %>%</div><div class="label">平均内心戏</div></div>
+      <div class="card"><div class="num"><%= avgCold %>%</div><div class="label">平均冷淡值</div></div>
+    </div>
+
+    <h2>人格分布</h2>
+    <div class="chart-bar">
+      <% typeDist.forEach(function(t){ %>
+        <div class="bar-row">
+          <span class="bar-label"><%= t.type %> <%= t.type_name %></span>
+          <div class="bar-track"><div class="bar-fill" style="width:<%= Math.round(t.count/total*100) %>%"></div></div>
+          <span class="bar-val"><%= t.count %></span>
+        </div>
+      <% }) %>
+      <% if(typeDist.length===0){ %><p class="empty">暂无数据</p><% } %>
+    </div>
+
+    <h2>废物等级分布</h2>
+    <div class="chart-bar">
+      <% wasteDist.forEach(function(w){ %>
+        <div class="bar-row">
+          <span class="bar-label"><%= wasteNames[w.waste_level] || '未知' %></span>
+          <div class="bar-track"><div class="bar-fill" style="width:<%= Math.round(w.count/total*100) %>%"></div></div>
+          <span class="bar-val"><%= w.count %></span>
+        </div>
+      <% }) %>
+      <% if(wasteDist.length===0){ %><p class="empty">暂无数据</p><% } %>
+    </div>
+
+    <h2>最新测试</h2>
+    <table>
+      <thead><tr><th>ID</th><th>类型</th><th>废物等级</th><th>内心戏</th><th>冷淡值</th><th>时间</th></tr></thead>
+      <tbody>
+        <% latest.forEach(function(r){ %>
+          <tr onclick="location.href='/admin/results/<%= r.id %>'" style="cursor:pointer">
+            <td>#<%= r.id %></td>
+            <td><%= r.type %> <%= r.type_name %></td>
+            <td><%= wasteNames[r.waste_level] || '' %></td>
+            <td><%= r.inner_drama %>%</td>
+            <td><%= r.coldness %>%</td>
+            <td class="time"><%= r.created_at %></td>
+          </tr>
+        <% }) %>
+        <% if(latest.length===0){ %><tr><td colspan="6" class="empty">暂无数据</td></tr><% } %>
+      </tbody>
+    </table>
+  </main>
+</div>
+</body>
+</html>

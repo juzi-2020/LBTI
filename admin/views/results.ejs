@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LBTI 管理后台 - 结果列表</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="logo">LBTI</div>
+    <a href="/admin">📊 仪表盘</a>
+    <a href="/admin/results" class="active">📋 结果列表</a>
+    <div class="spacer"></div>
+    <a href="https://github.com/juzi-2020/LBTI" target="_blank" class="ext">GitHub ↗</a>
+  </nav>
+  <main class="main">
+    <h1>结果列表 <span class="sub">共 <%= total %> 条</span></h1>
+    <table>
+      <thead><tr><th>ID</th><th>类型</th><th>类别</th><th>废物等级</th><th>维度</th><th>IP</th><th>时间</th></tr></thead>
+      <tbody>
+        <% rows.forEach(function(r){ %>
+          <tr onclick="location.href='/admin/results/<%= r.id %>'" style="cursor:pointer">
+            <td>#<%= r.id %></td>
+            <td><%= r.type %> <%= r.type_name %></td>
+            <td><%= r.type_category || '-' %></td>
+            <td><%= wasteNames[r.waste_level] || '' %></td>
+            <td><%= r.inner_drama %>/<%= r.coldness %>/<%= r.extreme %>/<%= r.conflict %></td>
+            <td class="dim"><%= r.ip || '-' %></td>
+            <td class="time"><%= r.created_at %></td>
+          </tr>
+        <% }) %>
+        <% if(rows.length===0){ %><tr><td colspan="7" class="empty">暂无数据</td></tr><% } %>
+      </tbody>
+    </table>
+    <div class="pages">
+      <% if(page>1){ %><a href="?page=<%= page-1 %>">← 上一页</a><% } %>
+      <span>第 <%= page %> / <%= totalPages %> 页</span>
+      <% if(page<totalPages){ %><a href="?page=<%= page+1 %>">下一页 →</a><% } %>
+    </div>
+  </main>
+</div>
+</body>
+</html>

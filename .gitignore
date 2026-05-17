@@ -1,0 +1,7 @@
+﻿node_modules/
+.wrangler/
+.vercel/
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

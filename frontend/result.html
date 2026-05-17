@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>恋爱人形测试 - 结果</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--text:#2a2040;--text-dim:#8a7ea8;--accent:#7c5cfc;--amber:#f5a623;--blue:#5b8def;--rose:#e84a6e}
+  body{font-family:'Inter',sans-serif;min-height:100vh;background:#d8c8f0;background:radial-gradient(ellipse at 8% 12%,rgba(180,100,255,.7) 0%,transparent 38%),radial-gradient(ellipse at 88% 8%,rgba(100,150,255,.6) 0%,transparent 32%),radial-gradient(ellipse at 45% 92%,rgba(255,130,200,.55) 0%,transparent 38%),radial-gradient(ellipse at 20% 55%,rgba(120,220,180,.5) 0%,transparent 28%),radial-gradient(ellipse at 78% 35%,rgba(255,180,100,.45) 0%,transparent 26%),radial-gradient(ellipse at 35% 25%,rgba(160,120,255,.4) 0%,transparent 32%),radial-gradient(ellipse at 65% 65%,rgba(140,230,140,.4) 0%,transparent 28%),radial-gradient(ellipse at 92% 55%,rgba(255,130,180,.35) 0%,transparent 26%),#d8c8f0;background-size:300% 300%;animation:bgMove 22s ease infinite;color:var(--text);display:flex;align-items:flex-start;justify-content:center;padding:20px 0 60px}
+  @keyframes bgMove{0%{background-position:0% 0%}25%{background-position:50% 30%}50%{background-position:100% 50%}75%{background-position:60% 90%}100%{background-position:0% 0%}}
+  .c{position:relative;z-index:1;width:100%;max-width:560px;padding:20px}
+  .rc{padding:36px 28px;border-radius:24px;background:rgba(255,255,255,.38);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.5);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 8px 32px rgba(80,60,180,.12);animation:fi .6s ease}
+  @keyframes fi{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+
+  .rh{text-align:center;margin-bottom:24px}
+  .rh .eb{font-size:72px;line-height:1;margin-bottom:8px}
+  .rh .tc{display:inline-block;font-size:12px;letter-spacing:2px;background:rgba(124,92,252,.12);color:var(--accent);font-weight:600;border-radius:100px;padding:4px 16px;margin-bottom:6px}
+  .rh h2{font-size:30px;font-weight:700;margin-bottom:2px}
+  .rh .sub{color:var(--text-dim);font-size:14px}
+  .rh .wl{display:inline-block;font-size:11px;padding:3px 10px;border-radius:6px;margin-top:6px;font-weight:600;letter-spacing:1px}
+  .wl.lv1{background:rgba(76,175,80,.12);color:#4caf50}
+  .wl.lv2{background:rgba(0,206,209,.12);color:#00ced1}
+  .wl.lv3{background:rgba(245,166,35,.12);color:#f5a623}
+  .wl.lv4{background:rgba(232,74,110,.12);color:#e84a6e}
+  .wl.lv5{background:rgba(220,20,60,.12);color:#dc143c}
+  .vb{padding:18px 20px;border-radius:14px;background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.3);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;margin-bottom:20px;font-size:15px;line-height:1.8;color:var(--text);font-style:italic;text-align:center;position:relative}.vq{color:var(--accent);opacity:.5;font-size:2.2em;font-weight:700;line-height:0;vertical-align:middle}
+  
+  .dims{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+  .dc{padding:16px;border-radius:14px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.4);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;text-align:center}
+  .dc .l{font-size:12px;color:var(--text-dim);letter-spacing:1px}
+  .dc .s{font-size:30px;font-weight:700;margin:6px 0}
+  .dc .s.c1{color:var(--amber)}.dc .s.c2{color:var(--blue)}.dc .s.c3{color:var(--rose)}.dc .s.c4{color:#a855f7}
+  .dc .bw{height:5px;background:rgba(255,255,255,.5);border-radius:5px;overflow:hidden;margin-top:4px}
+  .dc .bf{height:100%;width:0%;border-radius:5px;transition:width 1s ease}
+  .dc .bf.c1{background:linear-gradient(90deg,#f5a623,#f7b731)}.dc .bf.c2{background:linear-gradient(90deg,#5b8def,#7aa3f0)}.dc .bf.c3{background:linear-gradient(90deg,#e84a6e,#f06a7e)}.dc .bf.c4{background:linear-gradient(90deg,#a855f7,#c084fc)}
+  .tags{margin-bottom:16px}
+  .tags .tg{display:inline-block;font-size:13px;padding:5px 14px;border-radius:100px;margin:0 5px 8px 0;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.38);box-shadow:0 0 0 1px rgba(255,255,255,.1) inset}
+  .sec{margin-bottom:16px}
+  .sec h3{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--accent)}
+  .sec p{font-size:14px;line-height:1.8;color:var(--text-dim)}
+  .traits{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .traits .tr{font-size:12px;padding:6px 12px;border-radius:8px;background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.15);color:var(--text-dim);line-height:1.5}
+  .catchphrases{margin-bottom:16px}
+  .catchphrases .cp{font-size:13px;color:var(--text-dim);padding:4px 0;font-style:italic;line-height:1.8}
+  .cb{padding:18px;border-radius:14px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.4);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;margin-bottom:18px}
+  .cb h3{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--accent)}
+  .cb p{font-size:14px;line-height:1.8;color:var(--text-dim)}
+  .br{display:flex;gap:10px}
+  .br a,.br button{flex:1;padding:14px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .12s ease;font-family:inherit;text-align:center;text-decoration:none;display:inline-block}
+  .b1{border:1px solid rgba(255,255,255,.3) !important;background:rgba(255,255,255,.1) !important;backdrop-filter:blur(8px) !important;-webkit-backdrop-filter:blur(8px) !important;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset !important;color:var(--text) !important}
+  .b1:hover{transform:translateY(-3px) !important;background:rgba(255,255,255,.7) !important;color:var(--accent) !important;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,0 14px 48px rgba(124,92,252,.22) !important}
+  .b1:active{background:rgba(255,255,255,.15) !important;transform:translateY(1px) !important;box-shadow:inset 0 6px 20px rgba(0,0,0,.18) !important;transition:all .06s ease !important}
+  .hidden-badge{display:inline-block;font-size:10px;background:linear-gradient(135deg,#f5a623,#e84a6e);color:#fff;padding:2px 10px;border-radius:100px;margin-left:8px;font-weight:600;letter-spacing:1px;vertical-align:middle}
+  .fn{text-align:center;font-size:12px;color:rgba(80,60,120,.5);margin-top:20px;letter-spacing:1px}
+  .share-hint{text-align:center;font-size:12px;color:var(--text-dim);margin-top:12px;opacity:.6}
+  @media(max-width:520px){.dims{grid-template-columns:1fr 1fr}.rc{padding:24px 18px}.rh h2{font-size:22px}.rh .eb{font-size:56px}.dc .s{font-size:24px}.sec p,.cb p{font-size:13px}}
+  @media(prefers-color-scheme:dark){body{background:#181420;background:radial-gradient(ellipse at 10% 15%,rgba(160,100,240,.55) 0%,transparent 38%),radial-gradient(ellipse at 85% 10%,rgba(100,150,240,.5) 0%,transparent 32%),radial-gradient(ellipse at 50% 90%,rgba(220,100,160,.4) 0%,transparent 38%),radial-gradient(ellipse at 25% 60%,rgba(80,180,140,.35) 0%,transparent 28%),radial-gradient(ellipse at 75% 40%,rgba(200,110,140,.3) 0%,transparent 26%),radial-gradient(ellipse at 40% 30%,rgba(140,100,210,.3) 0%,transparent 32%),radial-gradient(ellipse at 60% 70%,rgba(70,170,100,.28) 0%,transparent 28%),radial-gradient(ellipse at 90% 60%,rgba(160,90,120,.25) 0%,transparent 26%),#181420;background-size:300% 300%;animation:bgMove 28s ease infinite}:root{--text:#e4dcf8;--text-dim:#a098c8}.rc{background:rgba(255,255,255,.08)!important}.vb,.dc,.cb,.tags .tg{background:rgba(255,255,255,.05)!important}.br a,.b1{background:rgba(255,255,255,.05)!important}.b1:hover{background:rgba(255,255,255,.08)!important}}
+</style>
+</head>
+<body>
+<div class="c">
+  <div class="rc" id="r">
+    <div class="rh">
+      <div class="eb" id="e">🔮</div>
+      <div class="tc" id="tc">--</div>
+      <h2 id="tn">加载中...</h2>
+      <div id="hw"></div>
+      <div class="sub" id="ts"></div>
+    </div>
+    <div class="vb" id="vb"></div>
+    <div class="dims">
+      <div class="dc"><div class="l">💭 内心戏</div><div class="s c1" id="is">0%</div><div class="bw"><div class="bf c1" id="ib"></div></div></div>
+      <div class="dc"><div class="l">❄️ 冷淡值</div><div class="s c2" id="cs">0%</div><div class="bw"><div class="bf c2" id="cb2"></div></div></div>
+    </div>
+    <div class="dims">
+      <div class="dc"><div class="l">🔥 极端度</div><div class="s c3" id="ep">0%</div><div class="bw"><div class="bf c3" id="eb"></div></div></div>
+      <div class="dc"><div class="l">🌀 矛盾度</div><div class="s c4" id="mp">0%</div><div class="bw"><div class="bf c4" id="mb"></div></div></div>
+    </div>
+    <div class="cb"><h3>💞 建议祸害谁</h3><p id="ct"></p></div>
+    <div class="tags" id="tags"></div>
+    <div class="sec"><h3>🔍 你的行为特征</h3><div class="traits" id="traits"></div></div>
+    <div class="catchphrases" id="catch"></div>
+    <div class="sec"><h3>📝 完整病历</h3><p id="dt"></p></div>
+    <div class="sec"><h3>💡 给你的诊断</h3><p id="at"></p></div>
+    <div class="br"><a href="index.html" class="b1">重新出生</a></div>
+    <div class="share-hint" id="share-hint"></div>
+    <div class="fn">不准就是你对 · 你急了就是你对</div>
+  </div>
+</div>
+<script>
+var ps=new URLSearchParams(window.location.search);
+var ii=ps.has('i')?parseInt(ps.get('i')):50;
+var cc=ps.has('c')?parseInt(ps.get('c')):50;
+var ee=ps.has('e')?parseInt(ps.get('e')):50;
+var mm=ps.has('m')?parseInt(ps.get('m')):50;
+
+// 隐藏彩蛋触发标记
+var hiddenTrigger = ps.has('h') ? ps.get('h') : '';
+
+var TT=[
+// ═══════ X系 · 极端型 ═══════
+{S:'X1',m:function(i,c){return i<15&&c>82},w:5,
+ E:'🗿',N:'已读不回专家',C:'X1 · GONE',
+ V:'你谈恋爱像在完成系统任务——定期打卡、偶尔回复、不主动不拒绝不负责。你的感情状态：已注销。',
+ D:'你在感情里的存在感约等于手机支架——有用的时候在，没用的时候不知道扔哪了。你谈恋爱是因为"该谈了"，不是心动了。你对象有时候会忘记自己不是单身。你的情感模块出厂就是省电模式，三天不联系对你来说是正常节奏，分手对你来说约等于卸载了一个不常用的APP。最离谱的是——你甚至觉得自己做得挺好的。',
+ R:['0感情波动','像在完成KPI','三天不联系是正常节奏','前任在你通讯录里叫"187号联系人"','分手第二天照常上班','你对象可能已经在跟别人聊了但你不知道'],
+ Q:['"嗯。"','"……(三天后)什么事?"','"都行。"','"收到。"','"哦。"'],
+ P:'建议别谈。真要谈找个跟你一样冷血的生物，两个AI互相充电谁也不欠谁。',
+ A:'问问自己是真想谈还是觉得该谈。不需要就别勉强，放过自己放过别人。谈恋爱不是打卡，说句"想你了"不会死——试试。'},
+{S:'X2',m:function(i,c){return i>82&&c<15},w:5,
+ E:'💥',N:'自爆卡车',C:'X2 · BOOM',
+ V:'你的恋爱没有刹车只有油门——喜欢就冲，不爽就炸，炸完再冲。你就是一颗绑了TNT的皮卡，油门焊死方向盘拆了。',
+ D:'表白速度比美团骑手还快，对方没下单你已送到门口。上头只需要三条消息：你好→在吗→结婚吧。吵架声音能穿透三堵墙，吵完又立刻黏上去求抱抱，然后在抱完的三分钟内开始怀疑对方是不是不爱你了。你的爱情是一个永动机：冲锋→爆炸→黏合→怀疑→再冲锋，中间几乎没有喘气的余地。冷静之后就是大型社死现场——但下次还敢。',
+ R:['表白比外卖还快','吵架声音穿透三堵墙','对方回慢5分钟开始写分手剧本','凌晨三点发三十六条语音','一言不合就威胁分手但十分钟自己先怂','冷静后大型社死但下次还敢'],
+ Q:['"你是不是不爱我了?!"','"好我不闹了……你先说你爱我"','"我没生气，真的，你过来我和你讲"','"这次是最后一次，下次再这样我真走"','"算了算了，是我不好我知道我烦"'],
+ P:'找个能接住核弹的佛祖型淡人。别找同类核弹，互相引爆渣都不剩。',
+ A:'慢一点，你要把对象吓跑了。先搞清楚人家叫什么再想结婚的事好吗求你了。你的热情很珍贵，别让它变成对方的负担。'},
+
+{S:'X3',m:function(i,c){return i>=62&&c>=62},w:5,
+ E:'💨',N:'行走的灾难',C:'X3 · DISASTER',
+ V:'你既想黏着对象又想一个人待着——你不是在谈恋爱，你是在表演人格分裂独角戏。你的情感是永动机，永不枯竭永不消停。',
+ D:'恭喜抽中SSR——行走的灾难。你的恋爱循环：好想谈→好怕伤→推开→后悔→挽回→好想谈，无限循环像台坏掉的洗衣机。你渴望被爱到窒息，但对方一靠近你马上拉警报。你的每任ex都可以写一本幸存者回忆录，心理咨询群已经组好了就等你拉人。好消息是——你至少意识到自己有病了，说明还有救。',
+ R:['情感永动机永不消停','恋爱版灾难片制片人','每任ex可组咨询群','想靠近→推开→后悔→挽回→循环播放','坏空调忽冷忽热','意识到自己有病是第一步'],
+ Q:['"你走吧——你怎么真走了?"','"行行行"→"行呗"→"随便你"','"我好想你"→(见面)"离我远点"','"你到底爱不爱我?!"','"我一个人也挺好的"→凌晨三点:哭'],
+ P:'你需要的是心理医生不是恋人。其次找个情绪稳定到极点的圣人——如果你能找到的话。',
+ A:'这不是一天养成的，一天也改不好，但你需要改变。去看咨询、去写日记、去学着信任。你值得被爱，但得让爱进得来。'},
+
+{S:'X4',m:function(i,c){return i>=50&&c>=50},w:4,
+ E:'⚡',N:'精神分裂预备役',C:'X4 · SCHIZO',
+ V:'走在悬崖边想跳下去飞翔又怕摔死。渴望被爱到窒息，但对方靠近你马上拉警报。你自己都搞不懂自己要什么还指望别人搞懂？',
+ D:'你脑子里的两个小人24小时互殴——一个说"冲啊表白啊"，另一个说"冷静别丢人"。结果就是你一会儿甜到让人牙疼，一会儿冷到让人心寒，对象可能需要一本说明书才能跟你相处。好消息是你不是故意作，你是真的脑子在打架。坏消息是——对象不知道这回事，ta只觉得你阴晴不定像个定时炸弹。',
+ R:['脑子里的两个小人互殴','忽冷忽热十级选手','对象需要说明书','又菜又爱玩','把自己和对方都搞得很累','你对象可能在看心理医生了'],
+ Q:['"靠近我"→"滚远点"→"你怎么真滚了"','"我好爱ta"→"ta应该不爱我"→"分手吧"→"我错了"','"今晚想黏在一起"→(一小时后)"我想静静"'],
+ P:'找个能读懂你脑电波的圣人。或者直接去看心理医生——这是认真的。',
+ A:'你不是作，是真的有病，但可以治。第一步：少想多做。第二步：去看咨询。第三步：放过彼此。'},
+
+// ═══════ S系 · 回避型 ═══════
+{S:'S1',m:function(i,c){return i<38&&c<35},w:1,
+ E:'💧',N:'绝世淡人',C:'S1 · NSA',
+ V:'你谈恋爱像在吃白米饭——不难吃但也说不出多好吃。不主动不拒绝不负责，稳定得像个理财产品。',
+ D:'绝了。你谈恋爱像在给公司打卡——每天上线两小时自动关机。分手第二天正常上班甚至忘了分过。你对象出轨了你都不知道，因为你根本没注意。你这不是冷血，是太稳定了，稳定得像台服务器。情绪波动比你手机的电量还稳定，分手对你来说约等于取消了一个订阅服务。',
+ R:['情绪稳定得像死人','不会作但也不会哄','分手了第二天正常上班','你对象大概率已经放弃改造你了','恋爱像在给公司打卡','朋友圈三个月一条'],
+ Q:['"嗯。""好。""行。"','"在忙。"(在刷手机)','"改天吧。"','"随便你。"','"我挺好的。"'],
+ P:'找个作精互相折磨一下，好歹有点水花。两个淡人在一起就是白开水兑白开水——没劲。',
+ A:'有点感情波动行吗？你对象也是人，不是盆栽。说句"想你了"不会死的——试试。'},
+
+{S:'S2',m:function(i,c){return i<35&&c>=35&&c<55},w:2,
+ E:'💤',N:'电子宠物型',C:'S2 · E-PET',
+ V:'你谈恋爱像养电子宠物——想起来就喂一下，忘了就让它饿着。反正又不会真的死。',
+ D:'蚌埠住了。消息明天回、约会改天约、过日子改天过。对象给你发消息等于喊死人起床。别人恋爱靠心，你恋爱靠"想起来这回事了"。你还觉得自己挺好的——这就是问题所在。每隔三天冒个泡，泡完继续潜水，对象都快忘了自己还有个对象。',
+ R:['懒到骨子里','消息轮回选手(已读→明天回)','冷战冠军能撑一星期','约会永远在改天','对象给你的备注是"失联人口"','你还觉得自己挺好的'],
+ Q:['"明天回你。"(然后忘了)','"改天吧。"','"我刚看到。"(三天后)','"最近有点忙。"(在刷短视频)','"嗯嗯好的。"(自动回复)'],
+ P:'找个跟你一样懒的，两人一起烂沙发上。别碰热情如火的，你招架不住，人家也被你气死。',
+ A:'发句"想你了"不会死。你现在发。卧槽你还不发？真有你的。把对象从"失联人口"挪回"置顶"行吗。'},
+
+{S:'S3',m:function(i,c){return i<35&&c>=55&&c<75},w:3,
+ E:'❄️',N:'仙人掌',C:'S3 · FROST',
+ V:'你的情感模块出厂就被阉了——理性到让人心寒，三个月浇一次水就够了。前任在你通讯录里叫"187号联系人"。',
+ D:'笑死。你三秒算出感情投入产出比，但理解不了人为什么要说"我爱你"。跟你谈恋爱等于跟Excel表格交往——数据准确、逻辑清晰、毫无温度。你的情感表达方式是"帮你把问题解决了"而不是"抱抱你"。对你来说，分手就是删了个数据条目，下一个人就是新建一个工作表。',
+ R:['从不主动但会回复','理性到让人心寒','分手就是删了个条目','对象怀疑你是个AI','三年不需要情感维护','解决问题>情感陪伴'],
+ Q:['"收到。""好的。""确认。"','"这个问题的解决方案是……"','"你的情绪波动不利于决策"','"我觉得我们需要冷静评估一下这段关系"','"你为什么会因为这种小事难过?"'],
+ P:'找个跟你一样冷血的，两个机器人至少不互相伤害。找火球型你只会觉得好麻烦然后拒绝。',
+ A:'下次对象说"我爱你"的时候，别说"收到"。"收到"不是谈恋爱的词。说"我也爱你"——试试，不试拉倒。偶尔掉一次眼泪不会让你的CPU过热。'},
+
+{S:'S4',m:function(i,c){return i<35&&c>=75},w:4,
+ E:'🪦',N:'已读不回pro',C:'S4 · GHOST',
+ V:'你跟世界的关系是：已读。你的感情状态是：不在服务区。谈恋爱？什么是谈恋爱？你连微信都懒得看。',
+ D:'你大概是在修道。不是开玩笑——你这种存在感，属于"死了三天邻居才发现"级别。不主动不回复不出现，对象给你发消息就是发给了虚空。你甚至不记得自己谈过恋爱，ex们已经习惯了你的人间蒸发。朋友圈三年更新两次，一次是"新年快乐"，一次是手滑。说实话你来测这个测试已经是你今年最主动的事了。',
+ R:['微信消息999+已读不回','人间蒸发是常规操作','朋友圈三年两条','分手了对方也想不起来通知你','社交已经被你优化掉了','来测这个测试是你今年最主动的事'],
+ Q:['"……"(永远不会回复)','"?"(一周后)','朋友圈:空白(已持续327天)','手机常年静音','微信步数:0'],
+ P:'别谈。真心别谈。你不需要对象，你需要的是偶尔上线确认一下自己还活着。',
+ A:'你连测试都做完了说明你还有救。试着回复一条消息——就一条，不会死。先从"嗯"开始练起，慢慢升级到"好的"。'},
+
+// ═══════ E系 · 焦虑型 ═══════
+{S:'E1',m:function(i,c){return i>=35&&i<48&&c<35},w:3,
+ E:'🐶',N:'舔狗pro max',C:'E1 · SIMP',
+ V:'你谈恋爱像在做义工——不求回报，只求对方活着。你就是恋爱界的活雷锋，全天候待命的24小时客服。',
+ D:'你是讨好型AI本AI，出厂设定就是为人类服务。爱情公式：付出=被爱，付出一万倍=永不失联。你像忘关的水龙头一直流，直到把自己流干。对象可能设了自动回复"好的收到爱你么么哒"，而你还在疯狂打字。舔狗不得好死是真的——但你不信。被放鸽子你能自我安慰"ta可能真的有事"，被冷落你能说服自己"ta最近压力大"。',
+ R:['过度付出型选手','自动为你找借口','被放鸽子还能自我安慰','存了对方所有朋友圈照片','跨城送一杯奶茶不让对方知道','朋友都劝你清醒点你:汪汪'],
+ Q:['"没关系！你忙你的！"','"我等你，多久都行。"','"你开心就好，真的。"','"我不图什么，就是想对你好。"','"汪。"(心情真的还行)'],
+ P:'找个懂得感恩的人，别找淡人。你付出到死对方没感觉你还自我感动。醒醒求你了。',
+ A:'你不是圣母，是圣人。但圣人最后都被钉在十字架上了。对自己好一点会死吗？试试。善良不等于没有底线，"我愿意"不等于"我不介意"。'},
+
+{S:'E2',m:function(i,c){return i>=35&&i<48&&c>=35&&c<48},w:3,
+ E:'🤡',N:'小丑本丑',C:'E2 · CLOWN',
+ V:'你在"我好爱ta"和"ta到底爱不爱我"之间反复横跳——你的恋爱状态就像马戏团，而你是那个负责搞笑的小丑。',
+ D:'你脑子里住着个编剧，24小时产出狗血剧。ta说了句"在忙"，你已拍完出轨三部曲并完成后期剪辑。恋爱是密室逃脱，钥匙在你口袋里，但你忘了翻。朋友听你分析八百遍了，现在已经不回你的消息。你过度解读的水平可以把一个"嗯"字分析出"ta可能出轨了且孩子都三岁了"的完整推理。你朋友已经求你别再分析ta了。',
+ R:['内心戏影帝','过度解读冠军','ta说在忙你已拍完出轨三部曲','朋友已经听烦了','分析型人才(浪费版)','不谈恋爱的时候挺正常的'],
+ Q:['"ta发了这个表情到底什么意思?!""我给你分析一下…""第1点…第2点…第3点…""你不懂！这里面水很深！"'],
+ P:'找个透明人，对方有啥说啥你没得分析。找同类就是两个傻逼互相调查——何必呢。',
+ A:'别分析对象了，分析分析自己。你为什么这么闲？去忙点自己的事不好吗。对方只是忙了、累了、忘了——别每条消息都做阅读理解。'},
+
+{S:'E3',m:function(i,c){return i>=48&&i<62&&c<35},w:4,
+ E:'🌙',N:'林黛玉',C:'E3 · LINDDY',
+ V:'你在白天：我很好，我独立，我不需要任何人。你在凌晨两点：一首歌能让你哭半小时，风一吹就能红眼眶。',
+ D:'白天上班晚上网易云——白天大女主，凌晨两点琼瑶哭戏替补。手机一千张截图全是ta朋友圈、聊天记录、微信步数。你像月球——正面岁月静好，背面全是陨石坑。ta不经意的一句"你最近辛苦了"能让你感动整整一周。看到云朵像ta、路灯像ta，连猫叫都像ta。你不记仇，哭完就翻篇——这是你的温柔。但你他妈到底想怎样，自己也不知道。',
+ R:['白天正常晚上发疯','口是心非十级','半夜删朋友圈专业户','一首歌能哭半小时','ta说辛苦了你能感动一周','不记仇哭完就翻篇'],
+ Q:['"我没哭……是手机太亮了……"','"你怎么对我这么好(哭)"','"这首歌怎么这么像我……"','"我就是……有点想你"','"没事你忙吧，我一个人待会儿。"(正在哭)'],
+ P:'找个狗狗型主动推你门。两个Emo就是凌晨三点互发"你睡了吗"，然后一起哭到天亮。',
+ A:'问题不是没人爱你，是你把门锁太死了。开条缝试试不会死真的。比起哭，把"我现在需要什么"说出口更有力量。眼泪能传达情绪，只有语言能传达需要。'},
+
+{S:'E4',m:function(i,c){return i>=62&&c<38},w:5,
+ E:'🔥',N:'核弹级恋爱脑',C:'E4 · NUKE',
+ V:'你谈恋爱就像得了狂犬病——见人就咬，咬住不放。你的理智在恋爱开始的那一刻就被狗吃了。',
+ D:'你是一颗感情核弹，保险栓在认识ta的第一秒就被你拆了。吃顿火锅规划到退休，ta说晚安你已经在看婴儿床。爱情CPU常年120%随时过热爆炸。你是舔狗和自爆卡车的杂交品种——既疯狂付出，又疯狂炸裂。ta放个屁你都觉得是爱的信号，ta迟到五分钟你已经开始写分手小论文。清醒一点求你了求求你了。',
+ R:['上头速度光速','对象就是全世界','吃顿火锅能规划到退休','分手了要死要活','ta说晚安你在看婴儿床','清醒之后想抽自己'],
+ Q:['"我好爱ta我真的好爱ta我太爱ta了"','"我们结婚吧！"(认识第三天)','"没有你我活不下去！"','"你在哪?跟谁?几点回来?"','"我查了你的步数和你的歌单——你不爱我了吧?"'],
+ P:'找个能接住你热情的淡人都行。别找冰山型，你会被冻死，对方也会被你吓死——双输。',
+ A:'冷静——你对象也是人，不是你的氧气瓶。没有自己的生活，先去搞一个再来谈恋爱。慢一点，先搞清楚人家叫什么再想退休计划。'},
+
+// ═══════ N系 · 矛盾型 ═══════
+{S:'N1',m:function(i,c){return i>=38&&i<50&&c>=38&&c<50},w:3,
+ E:'🫠',N:'恋爱脑晚期',C:'N1 · BRAINROT',
+ V:'你在"我离不开ta"和"我是不是太黏了"之间反复仰卧起坐——不是不爱，是不会爱。',
+ D:'你在感情中像一台过载的服务器——想爱但怕烦、想黏但怕被嫌、想放但放不下。你不是不想好好谈恋爱，你是真的不知道怎么谈。每次心动都是你一个人的宇宙大爆炸，冷静后就是大型反思现场。别人的恋爱是双人舞，你的恋爱是你一个人的排球队——你发球、你接球、你扣杀，最后累死的也是你。',
+ R:['想黏又怕被嫌','每次心动=宇宙大爆炸','冷静后大型反思','一个人排球队','不是不爱是不会爱','CPU常年80%跑满'],
+ Q:['"我是不是太黏了?"(是,但改不了)','"ta会不会觉得我烦?"','"算了不发了……算了还是发吧……算了删了吧"','"要不我冷静两天?"→两小时后:你在哪'],
+ P:'找个温和稳定的淡人，让你没得可纠结。或者找个跟你差不多的，互相消耗——至少公平。',
+ A:'先学会跟自己谈恋爱。你自己的CPU散热不行就别怪对方烫手。适当放空——不是每件事都需要分析，不是每条消息都需要秒回。'},
+
+{S:'N2',m:function(i,c){return i>=40&&i<55&&c>=48||(i>=48&&c>=38&&c<48)},w:4,
+ E:'🔍',N:'私家侦探',C:'N2 · CPU',
+ V:'你的恋爱日常：打开ta的微信步数→分析ta今天去了哪里→打开ta的网易云→看看ta听了什么歌→推断ta的心情→得出结论：ta可能出轨了。',
+ D:'你推理能力放公安局已是公安部特聘专家——但你他妈用来分析对象的微信步数和网易云歌单。搜索记录："已读不回什么意思""对象突然冷淡怎么办""ta刚才发的表情包是不是在暗示什么"。你把每一句话都做成了阅读理解，每一个标点符号都有五种解读。答：ta可能拉了泡屎，别想太多求你了。',
+ R:['侦探型人才(用在对象身上)','微信步数分析专家','网易云歌单=心情解码器','搜索记录全是感情问题','大部分时候都是你想多了','推理结论永远是:ta可能出轨了'],
+ Q:['"ta今天走了6234步——比昨天少了800步，一定是跟别人出去了"','"ta听了三首苦情歌——是在想前任吗"','"这个句号是什么意思？以前都是发句号的吗?"','"已读不回已经47分钟了——我需要开始准备分手文案吗"'],
+ P:'找个没秘密的人让你没得分析，你的推理能力就无处施展了。不然你累对方也累——何苦。',
+ A:'对方只是忙了、累了、忘了——别每条消息都做阅读理解。你的CPU该换散热了。把查岗的精力用来查一下自己余额，你会发现更需要关注的是这个。'},
+
+{S:'N3',m:function(i,c){return i>=48&&i<65&&c>=48&&c<65},w:4,
+ E:'🦔',N:'刺猬型',C:'N3 · HEDGEHOG',
+ V:'你的每一根刺都朝外——但刺尖的方向其实是保护你自己。嘴上说着"别靠近我"，心里在喊"你怎么还不来"。',
+ D:'你渴望爱但更害怕被伤害，于是把"不主动+保持距离"当铠甲。嘴上说"你走吧"心里在喊"你回来"，被关心了先炸毛然后再后悔，后悔了也不说——继续炸毛。吵架时最擅长用一句话精准刺到对方痛点然后结束对话。那些被你推开的人，也需要一个留下来的理由。但你没给——因为你觉得给了就输了。这不是傲娇，这是被过度训练的自我防御。',
+ R:['嘴上说滚心里喊回来','被关心先炸毛再后悔','吵架时精准扎心','推开后又偷偷看对方朋友圈','嘴比铁硬心比豆腐软','先推开对方=保护自己不被抛弃'],
+ Q:['"随便你。"(求你别随便)','"我不需要任何人。"(需要,很需要)','"你走啊。"(别走别走别走)','"无所谓。"(很所谓)','"别管我。"(过来管我)'],
+ P:'找个能看穿你刺的温柔怪物——被扎了不跑还继续靠近的那种。或者找心理医生，认真的。',
+ A:'那些被你推开的人，不一定都会转身离开。但你需要告诉他们："我其实很害怕。"短短五个字，比一万根刺更有力。下一次想说"你走吧"之前——试试这句。'},
+
+{S:'N4',m:function(i,c){return (i>=58&&c>=48)||(i>=65&&c>=38)},w:5,
+ E:'🤪',N:'发疯文学家',C:'N4 · MAD',
+ V:'你谈恋爱不是在谈，是在创作——每一段感情都是一部文学巨著。备忘录里全是小作文，朋友圈里全是仅ta可见的赋比兴。',
+ D:'你是恋爱界的卡夫卡——把一段普通的暧昧写成了意识流长篇，把一次平凡的吵架写成了史诗悲剧。凌晨三点是你创作高峰期，八百字小作文一夜三稿，改到第四版才发出去——然后对方回了个"好的"。你的感情浓度可以养活一整个出版社，但对方只是个普通读者，不是文学评论家。问题不是你写得不好——是你把"表达"当成了"谈判"，把"倾诉"当成了"武器"。',
+ R:['凌晨三点小作文大师','备忘录=文学创作基地','每次吵架=一部中篇小说','对方回"好的"你已写完赋比兴','感情浓度够养活出版社','把表达当谈判把倾诉当武器'],
+ Q:['"你根本不知道我为你付出了什么"(附2987字小论文)','"这是我最后一次给你发了"(然后附上2897字)','"(凌晨3:17)你知道吗，今天下午那个表情……"','"我写了首歌/诗/散文/小说给你"','"这是我凌晨写的第四版——第一二三版已经删了"'],
+ P:'找个爱读书的，或者同样爱写的——两个文学青年互相赋比兴至少公平。别找淡人，ta只会回"好的"。',
+ A:'写小作文之前先问自己：ta真的需要看这个吗？把创作的精力分一半去跟ta面对面说一句真话——比你写三千字管用。有些话当面说比写成小说更动人。'},
+
+// ═══════ 隐藏彩蛋 ═══════
+{S:'H1',m:function(i,c,h){return h==='pure'},w:2,
+ E:'⚔️',N:'纯爱战士',C:'⭐ PURE',
+ V:'在这个人均海王的年代，你还在坚守"一生一世一双人"的古典设定。你不是土，你是稀有物种。',
+ D:'我去。你在2026年还在搞纯爱——没有暧昧对象、没有鱼塘、没有备胎。你喜欢一个人就是真的喜欢，不会同时吊着好几个，不会骑驴找马。表白之前先确认对方单身，在一起之后自动屏蔽所有异性。你这种人在当代恋爱市场属于非物质文化遗产，需要被保护起来。唯一的毛病是：你可能太认真了——认真到对方压力山大。不是每个人都习惯被这么认真地喜欢。',
+ R:['一人一心一世间','没有鱼塘没有备胎','在一起后自动屏蔽异性','当代恋爱界非物质文化遗产','表白前先确认对方单身','太认真到对方有压力'],
+ Q:['"我只喜欢你一个人。"(真心的)','"没有暧昧对象，真的没有。"','"我不是不会玩——是不想。"','"一生一世。"(不是在开玩笑)'],
+ P:'找一个同样纯爱的人——两个纯爱战士相遇就是童话。避开任何带"海"字的类型，你会被淹死。',
+ A:'纯爱没有错——你是这个时代的珍稀动物。只是别把"认真"变成"压力"，让对方喘口气。爱是双向的，不是一个人的朝圣。'},
+
+{S:'H2',m:function(i,c,h){return h==='rat'},w:4,
+ E:'🐭',N:'鼠鼠恋人',C:'⭐ RAT',
+ V:'你觉得自己配不上任何人——但其实你只是习惯了下水道，忘了阳光是什么温度。',
+ D:'你在感情里把自己放得太低了，低到尘埃里还在想"尘埃会不会嫌我脏"。你觉得自己不够好看、不够有钱、不够有趣——总之不配被爱。所以你永远在讨好、在迁就、在说"对不起"。但你知道吗？那些被你仰望的人，可能并没有你想象中那么好。你低估了自己，高估了别人。真正的鼠鼠不是卑微的——是可爱且顽强的。你只是太久没被人认真看过。',
+ R:['觉得自己配不上任何人','永远在说对不起','讨好型人格晚期','低估自己高估别人','尘埃里的尘埃','可爱且顽强(但你不信)'],
+ Q:['"对不起……我又说对不起了"','"你为什么会喜欢我?我真的不知道"','"我不好,真的,你以后就知道了"','"你值得更好的人"(意思是我配不上)'],
+ P:'找个能把你从下水道里捞出来的人——不是同情你，是真的觉得你值得。',
+ A:'你比你想象的值得被爱一百倍。试着不道歉一整天——你会发现自己其实挺好的。鼠鼠也可以有春天，先走出下水道再说。'},
+
+{S:'H3',m:function(i,c,h){return h==='limbo'},w:3,
+ E:'📿',N:'意难平学家',C:'⭐ LIMBO',
+ V:'你的感情史是一部后现代主义悲剧——每段都有始无终，每次都是"差点就成了"。你不是在谈恋爱，你是在收集意难平素材。',
+ D:'你的感情经历就像一部连载了十年还没完结的番——每段都卡在最精彩的地方戛然而止。暧昧到99%突然对方说"我们还是做朋友吧"，谈了三个月就差见家长了突然分手。你不是没爱过——你是每次都在临门一脚的时候被命运绊倒。现在你学会了不抱期待，因为期待=失望。但说实话，你还没放弃——你还在等那个不存在的人。',
+ R:['每段感情都差一点','收集意难平素材','暧昧99%然后做朋友','期待=失望=不抱期待','看了三百年还没完结','嘴上说放下心里在等'],
+ Q:['"算了,不想了。"(又在想)','"我不期待了。"(正在期待)','"这次真的放下了。"(明年同一时间)','"没什么意难平的。"(备忘录里全是)'],
+ P:'别再找那种"感觉很好但就是不可能"的类型了。试试找那种"平平无奇但就是很踏实"的。',
+ A:'放下——不是删除聊天记录，是以后不翻了。纠结烂人就像反复看烂片的结局——再怎么放结局也不会变的。翻篇吧，番已经完结了。'}
+];
+
+function findT(i,c,h){
+  // 优先匹配隐藏彩蛋(只遍历H开头)
+  if(h){
+    for(var t=0;t<TT.length;t++) if(TT[t].S[0]==='H'&&TT[t].m(i,c,h)) return TT[t];
+  }
+  // 特殊极端优先
+  for(var t=0;t<TT.length;t++){
+    if(TT[t].S[0]==='X'&&TT[t].m(i,c)) return TT[t];
+  }
+  // 主线S/E/N匹配
+  for(t=0;t<TT.length;t++){
+    if(TT[t].S[0]!=='X'&&TT[t].S[0]!=='H'&&TT[t].m(i,c)) return TT[t];
+  }
+  // 兜底:最近邻
+  var grid={S1:[33,25],S2:[25,45],S3:[25,65],S4:[25,83],E1:[42,22],E2:[42,42],E3:[55,22],E4:[70,22],N1:[44,44],N2:[48,52],N3:[57,57],N4:[68,55]};
+  var b=TT[0],bd=Infinity;
+  for(t=0;t<TT.length;t++){
+    if(TT[t].S[0]==='X'||TT[t].S[0]==='H')continue;
+    var ci=grid[TT[t].S]||[50,50];
+    var d=Math.sqrt((i-ci[0])*(i-ci[0])+(c-ci[1])*(c-ci[1]));
+    if(d<bd){bd=d;b=TT[t];}
+  }
+  return b;
+}
+
+var r=findT(ii,cc,hiddenTrigger);
+var isHidden = r.S[0]==='H';
+// 保存结果到后台(静默)
+var ansStr = ps.get('a')||'';
+var answers = ansStr ? ansStr.split(',').map(Number) : [];
+try{var x=new XMLHttpRequest();x.open('POST','/api/results',true);x.setRequestHeader('Content-Type','application/json');x.send(JSON.stringify({type:r.S,typeName:r.N,typeCategory:r.C,wasteLevel:r.w||1,innerDrama:ii,coldness:cc,extreme:ee,conflict:mm,answers:answers}))}catch(e){}
+var wl = r.w||1;
+var wlClass = 'lv'+wl;
+var wlText = ['','🟢 轻度废物','🟡 中度废物','🟠 重度废物','🔴 极危废物','💀 终极废料'][wl];
+document.getElementById('e').innerHTML=r.E;
+document.getElementById('ep').textContent=ee+'%';
+document.getElementById('mp').textContent=mm+'%';
+setTimeout(function(){document.getElementById('eb').style.width=ee+'%';document.getElementById('mb').style.width=mm+'%'},400);
+document.getElementById('tc').innerHTML=r.C+(isHidden?' <span class="hidden-badge">隐藏</span>':'');
+document.getElementById('tn').textContent=r.N;
+document.getElementById('hw').innerHTML='<span class="wl '+wlClass+'">'+wlText+'</span>';
+document.getElementById('ts').textContent='内心戏 '+ii+'% · 冷淡值 '+cc+'%';
+document.getElementById('is').textContent=ii+'%';
+document.getElementById('cs').textContent=cc+'%';
+document.getElementById('vb').innerHTML='<span class="vq">"</span>'+r.V+'<span class="vq">"</span>';
+document.getElementById('dt').textContent=r.D;
+
+// traits
+var te=document.getElementById('traits');
+if(r.R){
+  var th='';
+  for(var ri=0;ri<r.R.length;ri++) th+='<span class="tr">'+r.R[ri]+'</span>';
+  te.innerHTML=th;
+}
+
+// catchphrases
+var ce=document.getElementById('catch');
+if(r.Q){
+  var ch='<h3 style="font-size:15px;font-weight:600;margin-bottom:8px;color:var(--accent)">💬 你的经典语录</h3>';
+  for(var qi=0;qi<r.Q.length;qi++) ch+='<div class="cp">'+r.Q[qi]+'</div>';
+  ce.innerHTML=ch;
+}
+
+// tags
+var tge=document.getElementById('tags');
+var tags=[];
+if(ii>=70){tags.push({t:'恋爱脑晚期',c:'#e84a6e'});tags.push({t:'满脑子都是ta',c:'#e84a6e'});}
+else if(ii>=50){tags.push({t:'内心戏丰富',c:'#f5a623'});tags.push({t:'爱脑补',c:'#f5a623'});}
+else if(ii>=30){tags.push({t:'偶尔多想',c:'#7c5cfc'});}
+else{tags.push({t:'情绪稳定器',c:'#5b8def'});tags.push({t:'淡定本定',c:'#5b8def'});}
+if(cc>=70){tags.push({t:'冰山本山',c:'#5b8def'});tags.push({t:'情感绝缘体',c:'#5b8def'});}
+else if(cc>=50){tags.push({t:'独处爱好者',c:'#6a8fc0'});tags.push({t:'需要空间',c:'#6a8fc0'});}
+else if(cc>=30){tags.push({t:'忽冷忽热',c:'#a855f7'});}
+else{tags.push({t:'热情小狗',c:'#f5a623'});tags.push({t:'黏人精',c:'#f5a623'});}
+if(ee>=70){tags.push({t:'极端玩家',c:'#e84a6e'});tags.push({t:'非黑即白',c:'#e84a6e'});}
+else if(ee>=50){tags.push({t:'有态度',c:'#f5a623'});}
+else if(ee>=35){tags.push({t:'中间派',c:'#7c5cfc'});}
+else{tags.push({t:'温和派',c:'#5b8def'});tags.push({t:'好说话',c:'#5b8def'});}
+if(mm>=65){tags.push({t:'矛盾综合体',c:'#a855f7'});tags.push({t:'自我拉扯',c:'#a855f7'});}
+else if(mm>=45){tags.push({t:'内心有戏',c:'#a855f7'});tags.push({t:'想太多',c:'#a855f7'});}
+else if(mm>=30){tags.push({t:'偶尔纠结',c:'#7c5cfc'});}
+else{tags.push({t:'表里如一',c:'#10b981'});tags.push({t:'自洽选手',c:'#10b981'});}
+for(var ti=0;ti<tags.length;ti++) tge.innerHTML+='<span class="tg" style="color:'+tags[ti].c+'">'+tags[ti].t+'</span>';
+
+document.getElementById('ct').textContent=r.P;
+document.getElementById('at').textContent=r.A;
+document.getElementById('share-hint').textContent=isHidden?'🎰 你触发了隐藏彩蛋！属于你的独特人格——分享给朋友让他们也来试试':'📸 截图分享给你的对象/闺蜜/受害者——让他们看看你是什么物种';
+
+// 动画
+setTimeout(function(){
+  document.getElementById('ib').style.width=ii+'%';
+  document.getElementById('cb2').style.width=cc+'%';
+},300);
+</script>
+</body>
+</html>

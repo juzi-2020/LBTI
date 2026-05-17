@@ -1,0 +1,7 @@
+name = "lbti"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lbti-db"
+database_id = "1d814a71-d307-4355-94f6-ea954272efd4"
