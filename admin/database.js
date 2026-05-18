@@ -31,8 +31,10 @@ function getNextId() {
 
 function now() {
   const d = new Date();
-  d.setHours(d.getHours() + 8); // UTC+8
-  return d.toISOString().replace('T', ' ').substring(0, 19);
+  // 转为 UTC+8 (Asia/Shanghai)
+  const utc8Ms = 8 * 60 * 60 * 1000;
+  const utc8 = new Date(d.getTime() + utc8Ms);
+  return utc8.toISOString().replace('T', ' ').substring(0, 19);
 }
 
 module.exports = {

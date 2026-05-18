@@ -25,8 +25,8 @@ export async function onRequest(context) {
       const ip = request.headers.get('cf-connecting-ip') || '';
       const ua = request.headers.get('user-agent') || '';
       await env.DB.prepare(
-        `INSERT INTO results (type, type_name, type_category, waste_level, inner_drama, coldness, extreme, conflict, answers, ip, user_agent)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO results (type, type_name, type_category, waste_level, inner_drama, coldness, extreme, conflict, answers, ip, user_agent, created_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', '+8 hours'))`
       ).bind(type, typeName, typeCategory || '', wasteLevel || 1, innerDrama || 0, coldness || 0, extreme || 0, conflict || 0,
         answers ? JSON.stringify(answers) : null, ip, ua).run();
       return json({ success: true });

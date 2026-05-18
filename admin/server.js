@@ -29,7 +29,7 @@ app.use('/api', require('./routes/api'));
 app.use('/admin', require('./routes/admin'));
 
 // 前端静态文件
-const frontendDir = path.join(__dirname, '..', '依恋类型测试');
+const frontendDir = path.join(__dirname, '..', 'frontend');
 app.use(express.static(frontendDir));
 
 // 根路径重定向

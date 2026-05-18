@@ -1,6 +1,13 @@
 ﻿const wasteNames = ['', '🟢 轻度废物', '🟡 中度废物', '🟠 重度废物', '🔴 极危废物', '💀 终极废料'];
 const ipCache = new Map();
 
+// 将 UTC+8 时间字符串转为 Asia/Shanghai 显示
+function toCST(utcStr) {
+  if (!utcStr) return '';
+  // 数据已存为 Asia/Shanghai 时间，直接返回
+  return utcStr.substring(0, 19);
+}
+
 async function locateIP(ip) {
   if (!ip || ip === '-' || ip.startsWith('192.168') || ip.startsWith('10.') || ip === '127.0.0.1' || ip === '::1') return '本地';
   if (ipCache.has(ip)) return ipCache.get(ip);
@@ -159,14 +166,14 @@ export async function onRequest(context) {
     if (total === 0) return Response.redirect(url.origin + '/admin');
 
     // 七天趋势
-    const daily = await env.DB.prepare("SELECT date(created_at) as d, COUNT(*) as c FROM results WHERE created_at >= datetime('now', '-7 days') GROUP BY d ORDER BY d").all();
+    const daily = await env.DB.prepare("SELECT date(created_at) as d, COUNT(*) as c FROM results WHERE datetime(created_at) >= datetime('now', '+8 hours', '-7 days') GROUP BY d ORDER BY d").all();
     // 各维度平均值按类型
     const byType = await env.DB.prepare("SELECT type, type_name, AVG(inner_drama) as id, AVG(coldness) as cd, AVG(extreme) as ex, AVG(conflict) as cf, COUNT(*) as cnt FROM results GROUP BY type ORDER BY cnt DESC").all();
     // IP统计
     const ipStats = await env.DB.prepare("SELECT ip, COUNT(*) as c, MAX(created_at) as last FROM results WHERE ip != '' GROUP BY ip ORDER BY c DESC LIMIT 15").all();
     const uniqueIPs = (await env.DB.prepare("SELECT COUNT(DISTINCT ip) as c FROM results WHERE ip != ''").first()).c;
     // 小时分布
-    const hourly = await env.DB.prepare("SELECT CAST(strftime('%H', created_at) AS INTEGER) as h, COUNT(*) as c FROM results GROUP BY h ORDER BY h").all();
+    const hourly = await env.DB.prepare("SELECT CAST(strftime('%H', created_at) AS INTEGER) as h, COUNT(*) as c FROM results WHERE datetime(created_at) >= datetime('now', '+8 hours', '-30 days') GROUP BY h ORDER BY h").all();
     const maxH = Math.max(...hourly.results.map(x => x.c), 1);
 
     let content = `<h1>📈 数据洞察</h1>`;
@@ -340,7 +347,7 @@ export async function onRequest(context) {
 
   // ─── 仪表盘 ───
   const total = (await env.DB.prepare('SELECT COUNT(*) as c FROM results').first()).c;
-  const today = (await env.DB.prepare("SELECT COUNT(*) as c FROM results WHERE date(created_at) = date('now')").first()).c;
+  const today = (await env.DB.prepare("SELECT COUNT(*) as c FROM results WHERE date(created_at) = date('now', '+8 hours')").first()).c;
   const typeDist = await env.DB.prepare('SELECT type, type_name, COUNT(*) as count FROM results GROUP BY type ORDER BY count DESC').all();
   const wasteDist = await env.DB.prepare('SELECT waste_level, COUNT(*) as count FROM results GROUP BY waste_level ORDER BY waste_level').all();
   const avgDrama = (await env.DB.prepare('SELECT AVG(inner_drama) as v FROM results').first())?.v || 0;
